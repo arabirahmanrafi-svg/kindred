@@ -1,0 +1,17 @@
+# MySQL for Kindred:  docker compose up -d
+services:
+  mysql:
+    image: mysql:8.4
+    container_name: kindred-mysql
+    environment:
+      MYSQL_DATABASE: kindred
+      MYSQL_USER: kindred
+      MYSQL_PASSWORD: kindred
+      MYSQL_ROOT_PASSWORD: rootpass
+    ports:
+      - "3306:3306"
+    volumes:
+      - kindred-data:/var/lib/mysql
+
+volumes:
+  kindred-data:
